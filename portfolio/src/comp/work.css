@@ -5,7 +5,8 @@
     padding: 1rem 2rem;
     background: #0f0f0f;
     object-fit: cover;
-    background-image: url("../img/texture.jpg");
+    background-image: url("../site-img/texture.jpg");
+    background-repeat: repeat;
 }
 .work .container
 {
