@@ -4,9 +4,10 @@ import { BsTelephoneInbound } from 'react-icons/bs';
 import { FiMapPin } from 'react-icons/fi';
 import './contact.css'
 import images from '../images';
+
 const Contact = () => {
     const [data, setData] = useState({
-        Name: '', Email: '', ItemNumber:'', Message:''
+        Name: '', Email: '', ItemNumber:''
     })
     let Name, Value
     const input = (e) => 
@@ -17,7 +18,7 @@ const Contact = () => {
     }
     const senddata = async (e) =>
     {
-        const{Name, Email, ItemNumber, Message} = data
+        const{Name, Email, ItemNumber} = data
         e.preventDefault()
         const options = {
             method: 'POST',
@@ -25,7 +26,7 @@ const Contact = () => {
                 'Content-Type': 'aplication/json'
             },
             body: JSON.stringify({
-                Name, Email, ItemNumber, Message
+                Name, Email, ItemNumber
             })
         }
 
@@ -54,7 +55,6 @@ const Contact = () => {
                         <div className='detail'>
                             <h4>mail us</h4>
                             <p>info@bluebase2.com</p>
-                            <p>info@bluebase2.com</p>
                         </div>
                     </div>
                     <div className='box'>
@@ -82,12 +82,11 @@ const Contact = () => {
             </div>
             <div className='right_box'>
                 <img src={images[7]} alt='icon'></img>
-                <h2>Let's work <span>together</span></h2>
+                <h2>Retrieve your <span>masterpiece</span></h2>
                     <form method='POST' className='form'>
                         <input type='text' name='Name' value={data.Name} placeholder='Name*' onChange={input}></input> 
                         <input type='text' name='Email' value={data.Email} placeholder='E-mail*' onChange={input}></input> 
-                        <input type='text' name='ItemNumber' value={data.ItemNumber} placeholder='Item Number*' onChange={input}></input> 
-                        <textarea placeholder='Message*' name='Message' value={data.Message} onChange={input}></textarea>
+                        <input type='text' name='ItemNumber' value={data.ItemNumber} placeholder='Item Number*' onChange={input}></input>
                         <button type='submit' onClick={senddata}>Send</button>
                     </form>
             </div>

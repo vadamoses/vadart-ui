@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-// import images from "../images";
 import items from "./items";
 import "./work.css";
 
@@ -10,7 +9,7 @@ const Work = () => {
 	const [divId, setDivId] = useState("");
 	let navigate = useNavigate();
 
-	const routeChange = () => {
+	const handleSubmit = (item) => {
 		let path = `/contact`;
 		navigate(path);
 	};
@@ -27,9 +26,16 @@ const Work = () => {
 					<p>latest works and featured</p>
 				</div>
 				<div>
-					{items.map((item) => (
-						<div className="container">
-							{/* {items.length %2 === 0 ? "left" :"right" } */}
+					{items.map((item, index) => (
+						<div
+							className="container"
+							key={index}
+							style={
+								index % 2 === 0
+									? { flexDirection: "row" }
+									: { flexDirection: "row-reverse" }
+							}
+						>
 							<div className="left">
 								<div className="exp-card-container">
 									<motion.div
@@ -54,15 +60,20 @@ const Work = () => {
 												exit={{ opacity: 0 }}
 											>
 												<p> {item.description} </p>
-												<button type="submit" onClick={routeChange}>
-													Buy Now
+												<button
+													name="submit-btn"
+													id="submit"
+													type="submit"
+													onClick={() => handleSubmit(item)}
+												>
+													Reserve
 												</button>
 											</motion.div>
 										)}
 									</motion.div>
 								</div>
 							</div>
-							<div className= "right">
+							<div className="right">
 								<div className="content">
 									<motion.div
 										className="box"

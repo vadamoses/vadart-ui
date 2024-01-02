@@ -14,7 +14,7 @@ import { BiCodeAlt } from "react-icons/bi";
 import images from "../images";
 
 const Home = () => {
-  const boxRef = useRef(null);
+	const boxRef = useRef(null);
 	return (
 		<>
 			<div className="home">
@@ -39,7 +39,7 @@ const Home = () => {
 					<div className="right_container">
 						<div className="contant">
 							<div className="top_box">
-								<p>latest works and featured</p>
+								<p>latest works</p>
 							</div>
 							<div className="bottom_box">
 								<div className="box">
@@ -142,10 +142,13 @@ const Home = () => {
 						</div>
 					</div>
 				</div>
-				<div className="carousel-container" ref={boxRef}>
-					<motion.div className="carousel" whileTap={{cursor: "grabbing"}}>
+				<div className="carousel_container" ref={boxRef}>
+					<div className="carousel_top_box">
+						<p>featured pieces</p>
+					</div>
+					<motion.div className="carousel" whileTap={{ cursor: "grabbing" }}>
 						<motion.div
-							className="inner-carousel"
+							className="inner_carousel"
 							drag="x"
 							dragConstraints={boxRef}
 						>

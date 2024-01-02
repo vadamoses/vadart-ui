@@ -1,123 +1,58 @@
 
 .footer
 {
-    padding: 10px 20px;
-    width: 100%;
-    background: #0f0f0f;
-}
-.footer .top_container
-{
-    margin-top: 20px;
+    padding: 30px 20px;
     max-width: 100%;
-}
-.footer .top_container .contant
-{
-    width: 100%;
-    display: flex;
-}
-.footer .top_container .contant .left_box
-{
-    width: 49%;
-    padding: 30px 30px;
-    background: linear-gradient(to right, #323232, #141414);
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-.footer .top_container .contant .left_box .box
-{
-    padding: 40px 20px;
-    background: #242424;
-    border-radius: 10px;
-}
-.footer .top_container .contant .left_box .box .detail h3
-{
-   font-size: 32px;
-   color: #fff;
-   text-align: center;
-}
-.footer .top_container .contant .left_box .box .detail p
-{
-    margin-top: 10px;
-    text-transform: uppercase;
-    color: #c6c6c6;
-    font-size: 12px;
-    text-align: center;
-}
-.footer .top_container .contant .right_box
-{
-    width: 49%;
-    padding: 30px 30px;
-    background: linear-gradient(to right, #323232, #141414);
-    border-radius: 10px;
-    justify-content: space-between;
-    margin-left: 20px;
-}
-.footer .top_container .contant .right_box .contant
-{
-    display: flex;
-}
-.footer .top_container .contant .right_box .contant .detail h2
-{
-    color: #fff;
-    font-size: 42px;
-}
-.footer .top_container .contant .right_box .contant .detail h2 span
-{
-    color: #5a77f3;
-}
-.footer .top_container .contant .right_box .contant .icon
-{
-    margin-top: 50px;
-    margin-left: 70px;
-    font-size: 22px;
-    color: #6c6c6c;
-    transition: 0.5s;
-}
-.footer .top_container .contant .right_box:hover .contant .icon
-{
-    color: #fff;
+    height: 20vh;
+    background: #0f0f0f;
 }
 .footer .bottom_container
 {
-    padding: 30px 40px;
     width: 100%;
+    display: block;
+    height: 100%;
 }
-.footer .bottom_container .container
+.footer .bottom_container .logo_container
 {
-    margin-top: 20px;
     max-width: 100%;
 }
-.footer .bottom_container .container h2
+.footer .bottom_container .logo_container .logo
+{
+   text-decoration: none;
+}
+.footer .bottom_container h2
 {
     text-align: center;
     font-size: 42px;
     color: #fff;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
-.footer .bottom_container .container .nav
-{
-    margin-top: 30px;
-    width: 100%;
-}
-.footer .bottom_container .container .nav ul
+.footer .bottom_container .nav
 {
     display: flex;
-    margin-left: 37%;
+    margin-top: 15px;
+    width: 100%;
+    justify-content: center;
 }
-.footer .bottom_container .container .nav ul li
+.footer .bottom_container .nav ul
+{
+    display: flex;
+}
+.footer .bottom_container .nav ul li
 {
     list-style: none;
-    margin-left: 20px;
+    margin-top: 5px;
 }
-.footer .bottom_container .container .nav ul li .link
+.footer .bottom_container .nav ul li .link
 {
-    text-decoration: none;
     color: #323232;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 700;
     transition: 0.5s;
-    font-weight: 600;
+    padding: 0 2rem 0 4rem;
 }
-.footer .bottom_container .container .nav ul li .link:hover
+.footer .bottom_container .nav ul li .link:hover
 {
     color: #fff;
 }
