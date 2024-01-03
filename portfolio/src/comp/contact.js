@@ -3,7 +3,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { BsTelephoneInbound } from 'react-icons/bs';
 import { FiMapPin } from 'react-icons/fi';
 import './contact.css'
-import images from '../images';
+import siteImages from '../siteImages';
 
 const Contact = () => {
     const [data, setData] = useState({
@@ -81,7 +81,7 @@ const Contact = () => {
                 </div>
             </div>
             <div className='right_box'>
-                <img src={images[7]} alt='icon'></img>
+                <img src={siteImages[7]} alt='icon'></img>
                 <h2>Retrieve your <span>masterpiece</span></h2>
                     <form method='POST' className='form'>
                         <input type='text' name='Name' value={data.Name} placeholder='Name*' onChange={input}></input> 
