@@ -11,7 +11,7 @@ const items = [
     },
     {
       id: 2,
-      background: artImages[0],
+      background: artImages[3],
       name: 'Item 2',
       description:
         'Nunc efficitur tincidunt malesuada. Pellentesque blandit sapien sed orci tristique molestie. Donec ut metus a sapien gravida convallis sed maximus neque. Aliquam consequat fringilla porta. Curabitur eget semper tortor.',
@@ -20,6 +20,13 @@ const items = [
       id: 3,
       background: artImages[2],
       name: 'Item 3',
+      description:
+        'Nunc efficitur tincidunt malesuada. Pellentesque blandit sapien sed orci tristique molestie. Donec ut metus a sapien gravida convallis sed maximus neque. Aliquam consequat fringilla porta. Curabitur eget semper tortor.',
+    },
+    {
+      id: 4,
+      background: artImages[0],
+      name: 'Item 4',
       description:
         'Nunc efficitur tincidunt malesuada. Pellentesque blandit sapien sed orci tristique molestie. Donec ut metus a sapien gravida convallis sed maximus neque. Aliquam consequat fringilla porta. Curabitur eget semper tortor.',
     },
