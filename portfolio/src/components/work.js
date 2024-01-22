@@ -4,27 +4,35 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import items from "./items";
 import "./work.css";
+import { ReserveItemButton, ViewCartButton } from "../tools/Buttons";
+import { useCart } from "react-use-cart";
 
 const Work = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [divId, setDivId] = useState("");
+	const { isEmpty,addItem } = useCart();
 	let navigate = useNavigate();
 
 	const handleSubmit = (item) => {
-		let path = `/contact`;
-		navigate(path);
+		addItem(item);
+		// let path = `/contact`;
+		// navigate(path);
 	};
 
 	const handleClick = (event) => {
 		setIsOpen(!isOpen);
 		setDivId(event.currentTarget.id);
 	};
+	const ViewCart = () => {
+		let path = `/cart`;
+		navigate(path);
+	}
 
 	return (
 		<>
 			<div className="work">
 				<div className="top_box">
-					<p>latest works and featured</p>
+					<p>latest featured works</p>
 				</div>
 				<div className="main_work_container">
 					<div className="row">
@@ -68,14 +76,13 @@ const Work = () => {
 														exit={{ opacity: 0 }}
 													>
 														<p> {item.description} </p>
-														<button
-															name="submit-btn"
-															id="submit"
-															type="submit"
-															onClick={() => handleSubmit(item)}
-														>
-															Reserve
-														</button>
+														<div className="rsv-button-container" onClick={() => handleSubmit(item)}>
+															<ReserveItemButton />
+														</div>
+														{!isEmpty &&
+														<div className="vc-button-container" onClick={() => ViewCart()}>
+															<ViewCartButton />
+														</div>}
 													</motion.div>
 												)}
 											</motion.div>

@@ -17,7 +17,7 @@ const Nav = () => {
 				<div className="container">
 					<div className="logo_container">
 						<Link to="/" className="logo">
-						<icons className="logo-item-icon"><icons.FaVk /></icons>
+						<i className="logo-item-icon"><icons.FaVk /></i>
 							{/* <h2>arts</h2> */}
 						</Link>
 					</div>

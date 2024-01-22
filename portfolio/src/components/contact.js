@@ -4,6 +4,7 @@ import { BsTelephoneInbound } from "react-icons/bs";
 import { FiMapPin } from "react-icons/fi";
 import "./contact.css";
 import siteImages from "../siteImages";
+import { ContactFormSendButton } from "../tools/Buttons";
 
 const Contact = () => {
 	const [data, setData] = useState({
@@ -37,18 +38,17 @@ const Contact = () => {
 			options
 		);
 		console.log(send);
-		if (send) {
-			alert("Message Sent !");
-		} else {
-			alert("something went wrong");
-		}
+		// if (send) {
+		// 	alert("Message Sent !");
+		// } else {
+		// 	alert("something went wrong");
+		// }
 	};
 	return (
 		<>
 			<div className="contact">
 				<div className="contact-container">
 					<div className="info-box">
-						{/* <h3>contact info</h3> */}
 						<div className="info">
 							<div className="box">
 								<div className="icon">
@@ -85,31 +85,34 @@ const Contact = () => {
 						<h2>
 							Retrieve your <span>masterpiece</span>
 						</h2>
-						<form method="POST" className="form">
+						<form method="POST" className="form" /* onSubmit={senddata} */>
 							<input
 								type="text"
 								name="Name"
 								value={data.Name}
-								placeholder="Name*"
+								placeholder="Name"
 								onChange={input}
+								autoComplete="off"
 							></input>
 							<input
 								type="text"
 								name="Email"
 								value={data.Email}
-								placeholder="E-mail*"
+								placeholder="E-mail"
 								onChange={input}
+								autoComplete="off"
 							></input>
 							<input
 								type="text"
 								name="ItemNumber"
 								value={data.ItemNumber}
-								placeholder="Item Number*"
+								placeholder="Item Number"
 								onChange={input}
+								autoComplete="off"
 							></input>
-							<button type="submit" onClick={senddata}>
-								Send
-							</button>
+							<div className="btn-container" onClick={senddata}>
+								<ContactFormSendButton />
+							</div>
 						</form>
 					</div>
 				</div>

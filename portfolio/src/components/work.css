@@ -46,6 +46,7 @@
 }
 
 .left .box p {
+	text-align: center;
 	margin-top: 5px;
 	text-transform: uppercase;
 	font-weight: 300;
@@ -102,6 +103,12 @@
 	background: linear-gradient(to right, #b5b2b2, #e5e2e2);
 	padding: 1rem 2.5rem;
 }
+.rsv-button-container, .vc-button-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem;
+}
 
 .exp-card-content {
 	width: 30rem;
@@ -118,21 +125,6 @@
 	font-size: x-large;
 	padding: .5rem;
 	margin: 0;
-}
-button {
-	margin-top: 10px;
-	background: #0f0f0f;
-	border: none;
-	outline: none;
-	color: #fff;
-	padding: 20px 20px;
-	border-radius: 20px;
-	transition: 0.5s;
-	cursor: pointer;
-}
-button:hover {
-	color: #0f0f0f;
-	background: rgb(101, 190, 119);
 }
 @media (max-width: 600px) {
 	.work .work_container {

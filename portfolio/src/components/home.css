@@ -3,33 +3,64 @@
 	width: 100%;
 }
 .home_container {
-	background-color: burlywood;
+	background-color: #171717;
 	height: 100%;
 	width: 100%;
 	display: grid;
 	grid-template-rows: 80vh 65vh 65vh;
 	grid-template-columns: 1fr 1fr;
 }
-.intro {
+.hero {
 	max-width: 100%;
 	max-height: 100%;
-	display: flex;
-	flex-wrap: wrap;
+	position: relative;
+	text-align: center;
 	grid-row: 1;
 	grid-column: 1 / -1;
 }
-.into-image {
+.hero-image {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
 }
-
+.blur-area {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(1px);
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.hero-text {
+	position: relative;
+	color: rgb(0, 0, 0);
+}
+.hero-text h1 {
+	margin: 10rem;
+}
+.hero-text-span {
+	margin: 10rem;
+}
+.hero-text p {
+	margin: 10rem;
+}
+.btn-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 2rem;
+}
 .row:after {
 	content: "";
 	display: table;
 	clear: both;
 }
-
 .image_container {
 	max-height: 100%;
 	max-width: 100%;
@@ -62,31 +93,20 @@
 	grid-row: 3;
 	grid-column: 1 / 2;
 }
-button {
-	margin-top: 10px;
-	background: #0f0f0f;
-	border: none;
-	outline: none;
-	color: #fff;
-	padding: 20px 20px;
-	border-radius: 20px;
-	transition: 0.5s;
-	cursor: pointer;
-}
-button:hover {
-	color: #0f0f0f;
-	background: rgb(101, 190, 119);
-}
 
 @media (max-width: 600px) {
 	.home_container {
-		grid-template-rows: 70vh 45vh 45vh 45vh 45vh;
+		grid-template-rows: 70vh 45vh 45vh;
 		grid-template-columns: 1fr 1fr;
 	}
-	.into-image {
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
+	.hero-text h1 {
+		margin: 5rem;
+	}
+	.hero-text-span {
+		margin: 5rem;
+	}
+	.hero-text p {
+		margin: 5rem;
 	}
 	.image_container {
 		grid-row: 2;
@@ -96,7 +116,7 @@ button:hover {
 		padding: 0.5rem;
 		grid-row: 3;
 		grid-column: 1 / -1;
-	}	
+	}
 	.image_container_rev {
 		grid-row: 4;
 		grid-column: 1 / -1;
@@ -105,5 +125,11 @@ button:hover {
 		padding: 0.5rem;
 		grid-row: 5;
 		grid-column: 1 / -1;
+	}
+	.btn-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 2rem;
 	}
 }

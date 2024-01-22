@@ -9,7 +9,7 @@
 }
 
 .navbar {
-	height: 65px;
+	height: 70px;
 	background-color: #0f0f0f;
 	position: relative;
 }
@@ -117,6 +117,7 @@ h2 {
 		right: 0;
 		top: 68px;
 		width: 0px;
+		z-index: 5;
 		border-bottom-left-radius: 0.5rem;
 		overflow: hidden;
 		height: calc(25vh - 5px);
