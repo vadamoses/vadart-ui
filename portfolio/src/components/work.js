@@ -2,21 +2,32 @@ import { React, useState } from "react";
 import { isMobile } from "react-device-detect";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useCart } from "react-use-cart";
+import { ReserveItemButton, ViewCartButton } from "../tools/Buttons";
+import "../tools/toast.css";
 import items from "./items";
 import "./work.css";
-import { ReserveItemButton, ViewCartButton } from "../tools/Buttons";
-import { useCart } from "react-use-cart";
-
 const Work = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [divId, setDivId] = useState("");
-	const { isEmpty,addItem } = useCart();
+	const { isEmpty, addItem } = useCart();
 	let navigate = useNavigate();
+	let today = new Date();
 
 	const handleSubmit = (item) => {
+		setIsOpen(isOpen);
+		item.reservationDate = today;
 		addItem(item);
 		// let path = `/contact`;
 		// navigate(path);
+		showSnackBar();
+	};
+	const showSnackBar = () => {
+		var x = document.querySelector(".snackbar");
+		x.className += " show";
+		setTimeout(function () {
+			x.className = x.className.replace("show", "");
+		}, 3000);
 	};
 
 	const handleClick = (event) => {
@@ -26,7 +37,7 @@ const Work = () => {
 	const ViewCart = () => {
 		let path = `/cart`;
 		navigate(path);
-	}
+	};
 
 	return (
 		<>
@@ -66,7 +77,9 @@ const Work = () => {
 												}}
 												layout
 											>
-												<motion.h2 layout="position">Item Details.</motion.h2>
+												<motion.h2 layout="position">
+													About The Piece.
+												</motion.h2>
 												{isOpen && divId.match(item.id) && (
 													<motion.div
 														className="exp-card-content"
@@ -76,13 +89,20 @@ const Work = () => {
 														exit={{ opacity: 0 }}
 													>
 														<p> {item.description} </p>
-														<div className="rsv-button-container" onClick={() => handleSubmit(item)}>
+														<div
+															className="rsv-button-container"
+															onClick={() => handleSubmit(item)}
+														>
 															<ReserveItemButton />
 														</div>
-														{!isEmpty &&
-														<div className="vc-button-container" onClick={() => ViewCart()}>
-															<ViewCartButton />
-														</div>}
+														{!isEmpty && (
+															<div
+																className="vc-button-container"
+																onClick={() => ViewCart()}
+															>
+																<ViewCartButton />
+															</div>
+														)}
 													</motion.div>
 												)}
 											</motion.div>
@@ -106,6 +126,9 @@ const Work = () => {
 											</motion.div>
 										</div>
 									</div>
+								</div>
+								<div id="snackbar" className="snackbar">
+									<p>Item added to cart.</p>
 								</div>
 							</div>
 						))}

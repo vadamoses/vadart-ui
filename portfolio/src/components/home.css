@@ -100,13 +100,13 @@
 		grid-template-columns: 1fr 1fr;
 	}
 	.hero-text h1 {
-		margin: 5rem;
+		margin: 2rem;
 	}
 	.hero-text-span {
-		margin: 5rem;
+		margin: 2rem;
 	}
 	.hero-text p {
-		margin: 5rem;
+		margin: 2rem;
 	}
 	.image_container {
 		grid-row: 2;
@@ -131,5 +131,8 @@
 		align-items: center;
 		justify-content: center;
 		margin: 2rem;
+	}
+	.blur-area {
+		height: 80%;
 	}
 }

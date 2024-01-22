@@ -52,6 +52,9 @@ h2 {
 .nav-elements ul li:not(:last-child) {
 	margin-right: 60px;
 }
+.nav-elements ul li:last-child {
+	margin-left: 60px;
+}
 
 .nav-elements ul a.active {
 	color: #574c4c;
@@ -123,12 +126,12 @@ h2 {
 		height: calc(25vh - 5px);
 		transition: all 0.3s ease-in-out;
 		background:rgba(15, 15, 15, .9);
-		box-shadow: -5px 8px 18px 0 rgba(107, 103, 147, 0.47);
+		box-shadow: -6px 9px 15px 1px rgba(107, 103, 147, 0.47);
 	}
 
 	.nav-elements.active {
-		width: 180px;
-		height: calc(30vh - 10px);
+		width: 175px;
+		height: calc(35vh - 10px);
 	}
 	.nav-elements ul {
 		max-width: 100%;
@@ -137,7 +140,7 @@ h2 {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		align-items: start;
+		align-items: flex-start;
 	}
 
 	.nav-elements ul li {
@@ -150,6 +153,9 @@ h2 {
 	.nav-elements ul li:not(:last-child) {
 		margin-right: 0;
 	}
+	.nav-elements ul li:last-child {
+		margin-left: 20px;
+	}
 	.nav-element-link {
 		font-weight: 600;
 		padding: 1rem;
@@ -157,5 +163,14 @@ h2 {
 	}
 	.nav-element-link:hover {
 		color: #c9c7c7;
+	}
+}
+@media (max-width: 400px) {
+	.navbar {
+		height: 70px;
+	}
+	.nav-elements.active {
+		width: 175px;
+		height: calc(50vh - 20px);
 	}
 }

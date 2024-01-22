@@ -18,6 +18,12 @@ const menuData = [
         url:"/contact",
         className:"nav-element-link",
         icon:icons.FaPhoneSquare,
+    },
+    {
+        title: "Cart",
+        url:"/cart",
+        className:"nav-element-link",
+        icon:icons.FaShoppingCart,
     }
 ];
 
