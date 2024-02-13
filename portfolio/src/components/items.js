@@ -13,7 +13,7 @@ const items = [
 	{
 		id: 2,
 		background: artImages[3],
-		name: "Item 2",
+		name: "Face Boy",
 		price: "149",
 		reservationDate: "",
 		description:

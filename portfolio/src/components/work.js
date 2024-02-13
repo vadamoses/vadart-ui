@@ -6,17 +6,18 @@ import { useCart } from "react-use-cart";
 import { ReserveItemButton, ViewCartButton } from "../tools/Buttons";
 import "../tools/toast.css";
 import items from "./items";
+import * as icons from "react-icons/fa";
 import "./work.css";
 const Work = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [divId, setDivId] = useState("");
 	const { isEmpty, addItem } = useCart();
 	let navigate = useNavigate();
-	let today = new Date();
+	const today = new Date();
 
 	const handleSubmit = (item) => {
 		setIsOpen(isOpen);
-		item.reservationDate = today;
+		item.reservationDate = today.toUTCString();
 		addItem(item);
 		// let path = `/contact`;
 		// navigate(path);
@@ -43,7 +44,15 @@ const Work = () => {
 		<>
 			<div className="work">
 				<div className="top_box">
-					<p>latest featured works</p>
+					<p>latest pieces</p>
+				</div>
+				<div class="center">
+					<h1>
+						<span>Text</span>
+
+						<span>Text</span>
+						<span>Text</span>
+					</h1>
 				</div>
 				<div className="main_work_container">
 					<div className="row">
@@ -90,19 +99,26 @@ const Work = () => {
 													>
 														<p> {item.description} </p>
 														<div
-															className="rsv-button-container"
-															onClick={() => handleSubmit(item)}
+															className="button-main-container"
+															style={{
+																gridTemplateColumns: isEmpty && "1fr",
+															}}
 														>
-															<ReserveItemButton />
-														</div>
-														{!isEmpty && (
 															<div
-																className="vc-button-container"
-																onClick={() => ViewCart()}
+																className="rsv-button-container"
+																onClick={() => handleSubmit(item)}
 															>
-																<ViewCartButton />
+																<ReserveItemButton />
 															</div>
-														)}
+															{!isEmpty && (
+																<div
+																	className="vc-button-container"
+																	onClick={() => ViewCart()}
+																>
+																	<ViewCartButton />
+																</div>
+															)}
+														</div>
 													</motion.div>
 												)}
 											</motion.div>
@@ -128,11 +144,16 @@ const Work = () => {
 									</div>
 								</div>
 								<div id="snackbar" className="snackbar">
-									<p>Item added to cart.</p>
+									<p>Item reserved in cart.</p>
 								</div>
 							</div>
 						))}
 					</div>
+				</div>
+				<div className="back-to-top-container">
+					<a href="#" class="back-to-top">
+						<icons.FaArrowAltCircleUp />
+					</a>
 				</div>
 			</div>
 		</>

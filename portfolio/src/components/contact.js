@@ -3,10 +3,12 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BsTelephoneInbound } from "react-icons/bs";
 import { FiMapPin } from "react-icons/fi";
 import "./contact.css";
+import { useCart } from "react-use-cart";
 import siteImages from "../siteImages";
 import { ContactFormSendButton } from "../tools/Buttons";
 
 const Contact = () => {
+	const { items } = useCart();
 	const [data, setData] = useState({
 		Name: "",
 		Email: "",
@@ -114,6 +116,19 @@ const Contact = () => {
 								<ContactFormSendButton />
 							</div>
 						</form>
+								{/* <p>Items in cart:{" "}</p>
+						<p className="marquee">
+								{items.map((item) => (
+									<h3 key={item.id}>
+										<>
+											{" "}
+											Name: {item.name}{""}
+											Price: {item.price}{""}
+											Quantity: {item.quantity}{""}
+										</>
+									</h3>
+								))}
+						</p> */}
 					</div>
 				</div>
 			</div>

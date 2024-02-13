@@ -1,7 +1,7 @@
 .contact {
 	padding: 8rem 0 0 0;
 	width: 100%;
-	height: 100vh;
+	height: 150vh;
 	background: #171717;
 	background-size: cover;
 }
@@ -68,7 +68,7 @@
 	background: linear-gradient(to right, #363636, #141414);
 	border-radius: 1rem;
 	width: 500px;
-	height: 70vh;
+	height: 70%;
 	grid-row: 1 / -1;
 	grid-column: 2 / -1;
 }
@@ -123,6 +123,52 @@
 	justify-content: center;
 	margin: 2rem;
 }
+.marquee {
+	border-right: solid 3px rgba(0, 255, 0, 0.75);
+	white-space: nowrap;
+	overflow: hidden;
+	font-family: "Source Code Pro", monospace;
+	font-size: 28px;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* Animation */
+.marquee {
+	animation: animated-text 4s steps(29, end) 1s 1 normal both,
+		animated-cursor 600ms steps(29, end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text {
+	from {
+		width: 0;
+	}
+	to {
+		width: 472px;
+	}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+	from {
+		border-right-color: rgba(0, 255, 0, 0.75);
+	}
+	to {
+		border-right-color: transparent;
+	}
+}
+
+@keyframes marquee {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(-100%, 0);
+	}
+}
+
 @keyframes contact-box {
 	0% {
 		box-shadow: #27272c;

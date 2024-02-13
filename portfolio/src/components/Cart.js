@@ -1,8 +1,11 @@
 import React from "react";
 import { useCart } from "react-use-cart";
-import './Cart.css'
+import { useNavigate } from "react-router-dom";
+import { CheckoutButton } from "../tools/Buttons";
+import "./Cart.css";
 
 const Cart = () => {
+	let navigate = useNavigate();
 	const {
 		isEmpty,
 		cartTotal,
@@ -11,41 +14,64 @@ const Cart = () => {
 		updateItemQuantity,
 		removeItem,
 		emptyCart,
-		metadata,
 	} = useCart();
+	const completeOrder = () => {
+		let path = `/contact`;
+		navigate(path);
+	};
 
-	if (isEmpty) return <p>Your cart is empty</p>;
+	if (isEmpty) return <p className="cart-empty">Your cart is empty</p>;
 
 	return (
 		<>
 			<div className="cart">
 				<div className="cart-container">
 					<h1>
-						Cart: ({'unique items: ' + totalUniqueItems} - {'total sum: '+cartTotal})
+						Cart: ({"unique items: " + totalUniqueItems} -{" "}
+						{"total sum: " + cartTotal})
 					</h1>
 
-					<pre>{JSON.stringify(metadata, null, 2)}</pre>
-
-					{!isEmpty && <button onClick={emptyCart}>Empty cart</button>}
+					{!isEmpty && (
+						<button className="empty-cart" onClick={emptyCart}>
+							Empty cart
+						</button>
+					)}
 
 					<ul>
 						{items.map((item) => (
 							<li key={item.id}>
-								<p>{""}# Name - {item.name}: #Quantity - {item.quantity}: #Item ID - {item.id}: #Item reserve date - {item.reservationDate}{""}
-								<button
-									onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-								>
-									-
-								</button>
-								<button
-									onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-								>
-									+
-								</button>
-								<button onClick={() => removeItem(item.id)}>Remove &times;</button></p>
+								<p>
+									{" "}
+									Name: {item.name} <br /> Price: {item.price} <br /> Quantity:{" "}
+									{item.quantity} <br /> Item ID: {item.id} <br /> Item
+									reservation date: {item.reservationDate}
+									<button
+										onClick={() =>
+											updateItemQuantity(item.id, item.quantity - 1)
+										}
+									>
+										-
+									</button>
+									<button
+										onClick={() =>
+											updateItemQuantity(item.id, item.quantity + 1)
+										}
+									>
+										+
+									</button>
+									<button onClick={() => removeItem(item.id)}>
+										Remove item &times;
+									</button>
+								</p>
 							</li>
 						))}
 					</ul>
+					<div
+						className="co-btn-container"
+						onClick={() => completeOrder(items)}
+					>
+						<CheckoutButton />
+					</div>
 				</div>
 			</div>
 		</>

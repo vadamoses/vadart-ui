@@ -1,4 +1,5 @@
 import "./Buttons.css";
+import * as icons from "react-icons/fa";
 
 export const ViewPiecesButton = () => (
 	<button className="vp-btn" style={{ "--clr": "#FF44CC" }}>
@@ -21,14 +22,15 @@ export const ReserveItemButton = () => (
 
 export const ViewCartButton = () => (
 	<button className="vc-btn" style={{ "--clr": "#FF5E00" }}>
-		<span>view cart</span>
+		{/* <span>view cart</span> */}
+		<span><icons.FaShoppingCart /></span>
 		<i></i>
 	</button>
 );
 
-export const ButtonFour = () => (
-	<button className="submit-btn" style={{ "--clr": "#8A2BE2" }}>
-		<span>Button</span>
+export const CheckoutButton = () => (
+	<button className="co-btn" style={{ "--clr": "#8A2BE2" }}>
+		<span>Complete Order</span>
 		<i></i>
 	</button>
 );
