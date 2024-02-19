@@ -3,12 +3,12 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BsTelephoneInbound } from "react-icons/bs";
 import { FiMapPin } from "react-icons/fi";
 import "./contact.css";
-import { useCart } from "react-use-cart";
+// import { useCart } from "react-use-cart";
 import siteImages from "../siteImages";
 import { ContactFormSendButton } from "../tools/Buttons";
 
 const Contact = () => {
-	const { items } = useCart();
+	// const { items } = useCart();
 	const [data, setData] = useState({
 		Name: "",
 		Email: "",
@@ -49,74 +49,75 @@ const Contact = () => {
 	return (
 		<>
 			<div className="contact">
-				<div className="contact-container">
-					<div className="info-box">
-						<div className="info">
-							<div className="box">
-								<div className="icon">
-									<HiOutlineMail />
+				<div className="contact-parallax">
+					<div className="contact-container">
+						<div className="info-box">
+							<div className="info">
+								<div className="box">
+									<div className="icon">
+										<HiOutlineMail />
+									</div>
+									<div className="detail">
+										<h4>mail us</h4>
+										<p>info@bluebase2.com</p>
+									</div>
 								</div>
-								<div className="detail">
-									<h4>mail us</h4>
-									<p>info@bluebase2.com</p>
+								<div className="box">
+									<div className="icon">
+										<BsTelephoneInbound />
+									</div>
+									<div className="detail">
+										<h4>contact us</h4>
+										<p>+1 504-899-8221</p>
+										<p>+1 504-899-8221</p>
+									</div>
 								</div>
-							</div>
-							<div className="box">
-								<div className="icon">
-									<BsTelephoneInbound />
-								</div>
-								<div className="detail">
-									<h4>contact us</h4>
-									<p>+1 504-899-8221</p>
-									<p>+1 504-899-8221</p>
-								</div>
-							</div>
-							<div className="box">
-								<div className="icon">
-									<FiMapPin />
-								</div>
-								<div className="detail">
-									<h4>location</h4>
-									<p>22 Baker Street, Texas United States W1U 3BW</p>
+								<div className="box">
+									<div className="icon">
+										<FiMapPin />
+									</div>
+									<div className="detail">
+										<h4>location</h4>
+										<p>22 Baker Street, Texas United States W1U 3BW</p>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div className="input-box">
-						<img src={siteImages[7]} alt="icon"></img>
-						<h2>
-							Retrieve your <span>masterpiece</span>
-						</h2>
-						<form method="POST" className="form" /* onSubmit={senddata} */>
-							<input
-								type="text"
-								name="Name"
-								value={data.Name}
-								placeholder="Name"
-								onChange={input}
-								autoComplete="off"
-							></input>
-							<input
-								type="text"
-								name="Email"
-								value={data.Email}
-								placeholder="E-mail"
-								onChange={input}
-								autoComplete="off"
-							></input>
-							<input
-								type="text"
-								name="ItemNumber"
-								value={data.ItemNumber}
-								placeholder="Item Number"
-								onChange={input}
-								autoComplete="off"
-							></input>
-							<div className="btn-container" onClick={senddata}>
-								<ContactFormSendButton />
-							</div>
-						</form>
-								{/* <p>Items in cart:{" "}</p>
+						<div className="input-box">
+							<img src={siteImages[7]} alt="icon"></img>
+							<h2>
+								Retrieve your <span>masterpiece</span>
+							</h2>
+							<form method="POST" className="form" /* onSubmit={senddata} */>
+								<input
+									type="text"
+									name="Name"
+									value={data.Name}
+									placeholder="Name"
+									onChange={input}
+									autoComplete="off"
+								></input>
+								<input
+									type="text"
+									name="Email"
+									value={data.Email}
+									placeholder="E-mail"
+									onChange={input}
+									autoComplete="off"
+								></input>
+								<input
+									type="text"
+									name="ItemNumber"
+									value={data.ItemNumber}
+									placeholder="Item Number"
+									onChange={input}
+									autoComplete="off"
+								></input>
+								<div className="btn-container" onClick={senddata}>
+									<ContactFormSendButton />
+								</div>
+							</form>
+							{/* <p>Items in cart:{" "}</p>
 						<p className="marquee">
 								{items.map((item) => (
 									<h3 key={item.id}>
@@ -129,6 +130,7 @@ const Contact = () => {
 									</h3>
 								))}
 						</p> */}
+						</div>
 					</div>
 				</div>
 			</div>

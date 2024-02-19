@@ -18,7 +18,7 @@ const Home = () => {
 			<div className="home">
 				<div className="home_container">
 					<div className="hero">
-						<img className="hero-image" src={artImages[2]} alt="Artpiece" />
+					<div className="parallax"></div>
 						<div className="blur-area">
 							<div className="hero-text">
 								<h1>
@@ -31,7 +31,10 @@ const Home = () => {
 									incidunt placeat. Sint doloribus, inventore, animi eius quae
 									accusamus, aperiam sit rem laboriosam quaerat illum.
 								</p>
-								<div onClick={() => handleSubmit()} className="btn-container">
+								<div
+									onClick={() => handleSubmit()}
+									className="home-btn-container"
+								>
 									<ViewPiecesButton />
 								</div>
 							</div>

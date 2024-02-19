@@ -3,6 +3,7 @@
 .co-btn,
 .cf-btn,
 .vc-btn,
+.ec-btn,
 .rsv-btn {
 	position: relative;
 	background: #444;
@@ -20,6 +21,7 @@
 .cf-btn,
 .co-btn,
 .vc-btn,
+.ec-btn,
 .rsv-btn {
 	animation: box 3s;
 	animation-iteration-count: 1;
@@ -28,6 +30,7 @@
 .co-btn:hover,
 .cf-btn:hover,
 .vc-btn:hover,
+.ec-btn:hover,
 .rsv-btn:hover {
 	letter-spacing: 0.2rem;
 	padding: 1.1rem 3.1rem;
@@ -40,6 +43,7 @@
 .cf-btn::before,
 .co-btn::before,
 .vc-btn::before,
+.ec-btn::before,
 .rsv-btn::before {
 	content: "";
 	position: absolute;
@@ -52,6 +56,7 @@
 .cf-btn span,
 .co-btn span,
 .vc-btn span,
+.ec-btn span,
 .rsv-btn span {
 	position: relative;
 	z-index: 1;
@@ -60,6 +65,7 @@
 .cf-btn i,
 .co-btn i,
 .vc-btn i,
+.ec-btn i,
 .rsv-btn i {
 	position: absolute;
 	inset: 0;
@@ -70,6 +76,7 @@
 .cf-btn i::before,
 .co-btn i::before,
 .vc-btn i::before,
+.ec-btn i::before,
 .rsv-btn i::before {
 	content: "";
 	position: absolute;
@@ -86,6 +93,7 @@
 .cf-btn:hover i::before,
 .vc-btn:hover i::before,
 .co-btn:hover i::before,
+.ec-btn:hover i::before,
 .rsv-btn:hover i::before {
 	width: 15px;
 	left: 10%;
@@ -96,6 +104,7 @@
 .cf-btn i::after,
 .co-btn i::after,
 .vc-btn i::after,
+.ec-btn i::after,
 .rsv-btn i::after {
 	content: "";
 	position: absolute;
@@ -112,6 +121,7 @@
 .cf-btn:hover i::after,
 .co-btn:hover i::after,
 .vc-btn:hover i::after,
+.ec-btn:hover i::after,
 .rsv-btn:hover i::after {
 	width: 15px;
 	left: 75%;
@@ -144,6 +154,7 @@
 
 .cf-btn,
 .co-btn,
+.ec-btn,
 .rsv-btn {
 	width: 60%;
 	padding: 1rem 4rem;
@@ -154,18 +165,19 @@
 	.vp-btn,
 	.co-btn,
 	.cf-btn,
+	.ec-btn,
 	.rsv-btn {
 		animation-iteration-count: 3;
 	}
 	.cf-btn,
+	.ec-btn,
+	.co-btn,
 	.rsv-btn {
-		padding: 1rem 3rem;
+		padding: 1rem 1.5rem;
 		text-align: center;
+		font-size: large;
 	}
 	.rsv-btn {
 		padding: 1rem;
-	}
-	.co-btn {
-		padding: .5rem;
 	}
 }

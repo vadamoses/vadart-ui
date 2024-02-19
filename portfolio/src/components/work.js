@@ -8,25 +8,25 @@ import "../tools/toast.css";
 import items from "./items";
 import * as icons from "react-icons/fa";
 import "./work.css";
+
 const Work = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [divId, setDivId] = useState("");
 	const { isEmpty, addItem } = useCart();
-	let navigate = useNavigate();
+	const navigate = useNavigate();
 	const today = new Date();
 
 	const handleSubmit = (item) => {
 		setIsOpen(isOpen);
 		item.reservationDate = today.toUTCString();
 		addItem(item);
-		// let path = `/contact`;
-		// navigate(path);
 		showSnackBar();
 	};
+
 	const showSnackBar = () => {
-		var x = document.querySelector(".snackbar");
+		const x = document.querySelector(".snackbar");
 		x.className += " show";
-		setTimeout(function () {
+		setTimeout(() => {
 			x.className = x.className.replace("show", "");
 		}, 3000);
 	};
@@ -35,24 +35,16 @@ const Work = () => {
 		setIsOpen(!isOpen);
 		setDivId(event.currentTarget.id);
 	};
+
 	const ViewCart = () => {
-		let path = `/cart`;
-		navigate(path);
+		navigate("/cart");
 	};
 
 	return (
-		<>
-			<div className="work">
+		<div className="work">
+			<div className="work-parallax">
 				<div className="top_box">
 					<p>latest pieces</p>
-				</div>
-				<div class="center">
-					<h1>
-						<span>Text</span>
-
-						<span>Text</span>
-						<span>Text</span>
-					</h1>
 				</div>
 				<div className="main_work_container">
 					<div className="row">
@@ -74,7 +66,6 @@ const Work = () => {
 											<motion.div
 												className="exp-card"
 												id={item.id}
-												//onHoverStart={(e) => handleClick(e)}
 												onClick={(e) => handleClick(e)}
 												transition={{
 													layout: { duration: 1.2, type: "spring" },
@@ -82,7 +73,7 @@ const Work = () => {
 												style={{
 													borderRadius: ".8rem",
 													boxShadow: "0px 10px 30px rgba(249, 242, 242,0.4)",
-													width: isOpen && divId.match(item.id) ? "95%" : "50%",
+													width: isOpen && divId.match(item.id) ? "90%" : "50%",
 												}}
 												layout
 											>
@@ -97,7 +88,7 @@ const Work = () => {
 														transition={{ duration: 1 }}
 														exit={{ opacity: 0 }}
 													>
-														<p> {item.description} </p>
+														<p>{item.description}</p>
 														<div
 															className="button-main-container"
 															style={{
@@ -136,7 +127,7 @@ const Work = () => {
 												layout
 											>
 												<motion.div className="img_box">
-													<img src={item.background} alt="Artpiece"></img>
+													<img src={item.background} alt="Artpiece" />
 												</motion.div>
 												<p>{item.name}</p>
 											</motion.div>
@@ -151,12 +142,12 @@ const Work = () => {
 					</div>
 				</div>
 				<div className="back-to-top-container">
-					<a href="#" class="back-to-top">
+					<a href="#top" className="back-to-top">
 						<icons.FaArrowAltCircleUp />
 					</a>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

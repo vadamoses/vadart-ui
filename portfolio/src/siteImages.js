@@ -11,6 +11,7 @@ import image12 from "./site-img/pho.png";
 import image13 from "./site-img/cir.png";
 import image14 from "./site-img/my-works.png";
 import image15 from "./site-img/gfonts.png";
+import image16 from "./site-img/work-background.jpg";
 
 const siteImages = [
 	image4,
@@ -26,6 +27,7 @@ const siteImages = [
 	image13,
 	image14,
 	image15,
+	image16,
 ];
 
 export default siteImages;

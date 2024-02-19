@@ -2,7 +2,7 @@ import "./Buttons.css";
 import * as icons from "react-icons/fa";
 
 export const ViewPiecesButton = () => (
-	<button className="vp-btn" style={{ "--clr": "#FF44CC" }}>
+	<button className="vp-btn" style={{ "--clr": "#ff9933" }}>
 		<span>view the collection</span>
 		<i></i>
 	</button>
@@ -22,14 +22,20 @@ export const ReserveItemButton = () => (
 
 export const ViewCartButton = () => (
 	<button className="vc-btn" style={{ "--clr": "#FF5E00" }}>
-		{/* <span>view cart</span> */}
 		<span><icons.FaShoppingCart /></span>
 		<i></i>
 	</button>
 );
 
+export const EmptyCartButton = () => (
+	<button className="ec-btn" style={{ "--clr": "#AD0808" }}>
+		<span>Empty Cart</span>
+		<i></i>
+	</button>
+);
+
 export const CheckoutButton = () => (
-	<button className="co-btn" style={{ "--clr": "#8A2BE2" }}>
+	<button className="co-btn" style={{ "--clr": "#10A515" }}>
 		<span>Complete Order</span>
 		<i></i>
 	</button>

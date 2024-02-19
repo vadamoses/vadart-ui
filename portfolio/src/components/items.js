@@ -37,6 +37,15 @@ const items = [
 		description:
 			"Nunc efficitur tincidunt malesuada. Pellentesque blandit sapien sed orci tristique molestie. Donec ut metus a sapien gravida convallis sed maximus neque. Aliquam consequat fringilla porta. Curabitur eget semper tortor.",
 	},
+	{
+		id: 5,
+		background: artImages[4],
+		name: "Item 5",
+		price: "415",
+		reservationDate: "",
+		description:
+			"Nunc efficitur tincidunt malesuada. Pellentesque blandit sapien sed orci tristique molestie. Donec ut metus a sapien gravida convallis sed maximus neque. Aliquam consequat fringilla porta. Curabitur eget semper tortor.",
+	},
 ];
 
 export default items;
