@@ -73,12 +73,12 @@ const Work = () => {
 												style={{
 													borderRadius: ".8rem",
 													boxShadow: "0px 10px 30px rgba(249, 242, 242,0.4)",
-													width: isOpen && divId.match(item.id) ? "90%" : "50%",
+													width: isOpen && divId.match(item.id) ? "90%" : "60%",
 												}}
 												layout
 											>
 												<motion.h2 layout="position">
-													About The Piece.
+													About The Piece {!isOpen && <i className="eye-icon"><icons.FaRegEye /></i>}
 												</motion.h2>
 												{isOpen && divId.match(item.id) && (
 													<motion.div

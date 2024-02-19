@@ -135,7 +135,11 @@
 	margin: 0;
 	color: white;
 }
-
+.work h2 .eye-icon {
+	color: #000;
+	font-size: 30px;
+	float: right;
+}
 .button-main-container {
 	margin: 1em;
 	display: grid;
@@ -194,7 +198,7 @@
 
 	.exp-card {
 		text-align: center;
-		padding: 0.2rem;
+		padding: 0.3rem;
 	}
 
 	.exp-card-content {
@@ -235,5 +239,10 @@
 	.vc-btn,
 	.rsv-btn {
 		padding: 1rem 2rem;
+	}
+	.work h2 .eye-icon {
+		color: #000;
+		font-size: 20px;
+		float: right;
 	}
 }
