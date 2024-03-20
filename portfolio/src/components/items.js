@@ -8,7 +8,7 @@ const items = [
 		price: "100",
 		reservationDate: "",
 		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel sapien arcu. Donec sapien eros, efficitur blandit dui vitae, imperdiet consectetur nibh.",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit. vel sapien arcu. Donec sapien eros, efficitur blandit dui vitae, imperdiet consectetur nibh.",
 	},
 	{
 		id: 2,
@@ -17,7 +17,7 @@ const items = [
 		price: "149",
 		reservationDate: "",
 		description:
-			"Nunc efficitur tincidunt malesuada. Pellentesque blandit sapien sed orci tristique molestie. Donec ut metus a sapien gravida convallis sed maximus neque. Aliquam consequat fringilla porta. Curabitur eget semper tortor.",
+			"Nunc efficitur tincidunt. Pellentesque blandit sapien sed orci tristique molestie. Donec ut metus a sapien gravida convallis sed maximus neque. Aliquam consequat fringilla porta. Curabitur eget semper tortor.",
 	},
 	{
 		id: 3,
@@ -26,7 +26,7 @@ const items = [
 		price: "210",
 		reservationDate: "",
 		description:
-			"Nunc efficitur tincidunt malesuada. Pellentesque blandit sapien sed orci tristique molestie. Donec ut metus a sapien gravida convallis sed maximus neque. Aliquam consequat fringilla porta. Curabitur eget semper tortor.",
+			"Nunc efficitur tincidunt malesuada. Pellentesque blandit sapien sed orci tristique molestie. Donec ut metus a sapien gravida convallis sed maximus neque. Aliquam consequat fringilla porta.tortor.",
 	},
 	{
 		id: 4,
