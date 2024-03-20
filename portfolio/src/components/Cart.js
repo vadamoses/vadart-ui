@@ -1,7 +1,11 @@
 import React from "react";
 import { useCart } from "react-use-cart";
 import { useNavigate } from "react-router-dom";
-import { CheckoutButton, EmptyCartButton } from "../tools/Buttons";
+import {
+	CheckoutButton,
+	EmptyCartButton,
+	ViewPiecesButton,
+} from "../tools/Buttons";
 import "./Cart.css";
 import * as icons from "react-icons/fa";
 
@@ -25,11 +29,13 @@ const Cart = () => {
 		<div className="cart">
 			<div className="cart-parallax">
 				<div className="cart-container">
-					<h1>
-						Cart: (unique items: {totalUniqueItems} - total sum: {cartTotal})
-					</h1>
 					{isEmpty ? (
-						<p className="cart-empty">Your cart is empty</p>
+						<div className="cart-empty">
+							<p> Your cart is empty </p><br />
+							<div onClick={() => navigate("/work")}>
+								<ViewPiecesButton />
+							</div>
+						</div>
 					) : (
 						<>
 							<ul className="cart-card-container">
@@ -72,6 +78,20 @@ const Cart = () => {
 									</li>
 								))}
 							</ul>
+							<div className="cart-summary">
+								<div className="cart-summary-items">
+									<h1>Cart Summary</h1>
+									<h3>Items: {totalUniqueItems}</h3>
+									<h3>
+										Total: <icons.FaEuroSign /> {cartTotal}
+									</h3>
+									<h3>Tax: {cartTotal * 0.21}</h3>
+									<h2>
+										Subtotal: <icons.FaEuroSign />{" "}
+										{(cartTotal + cartTotal * 0.21).toFixed(2)}
+									</h2>
+								</div>
+							</div>
 							<div className="buttons-container">
 								{!isEmpty && (
 									<div
